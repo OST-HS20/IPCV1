@@ -1,0 +1,27 @@
+\section{Frequency Domain}
+\subsection{1D} 
+Foutier Transformation
+\[
+F(u) = \sum_{x=0}^{M-1}f(x)\cdot e ^{-j2\pi\left(\frac{ux}{M}\right)}
+\]
+Inverse Fourier Transformation
+\[
+f(x) = \frac{1}{M} \sum_{u=0}^{M-1}f(u)\cdot e ^{j2\pi\left(\frac{ux}{M}\right)}
+\]
+
+\subsection{2D}
+Fourier Transformation
+\[
+F(u,v) = \sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x, y)\cdot e ^{-j2\pi\left(\frac{ux}{M}+\frac{vy}{N}\right)}
+\]
+Inverse Fourier Transformation
+\[
+f(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1}\sum_{v=0}^{N-1}f(u, v)\cdot e ^{j2\pi\left(\frac{ux}{M}+\frac{vy}{N}\right)}
+\]
+
+\subsection{Eigenschaften}
+\begin{itemize}
+	\item $\Delta u = \frac{1}{M\Delta T}$ und $\Delta v = \frac{1}{N\Delta Z}$
+	\item \autoref{table:ft_symmetrie}
+	\item Power Spektrum $F(u,v) = \left|F(u,v)\right|^2 = \Re\{F(u,v)\}^2 + \Im\{F(u,v)\}^2$
+\end{itemize}
