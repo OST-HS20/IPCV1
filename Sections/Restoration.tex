@@ -86,10 +86,20 @@ p(z) = \begin{cases}
 \section{Reconstruction}
 Grundsätzlich werden spatial Filter für das Wiederherstellen der Bilder benützt. Dabei ist ein Rechteck mit $m\times n$ und Zentrum $(x,y)$ als $S_{xy}$ definiert.
 
+\textbf{Beispiel}
+\begin{center}
+	\includegraphics[width=0.2\columnwidth]{Images/iriginal}
+\end{center}
+
+
 \subsection{Arithmerisch}
 \[
 \hat{f} = \frac{1}{mn}\sum_{s,t\in S_{xy}}g(s,t)
 \]
+\begin{center}
+	\includegraphics[width=0.8\columnwidth]{Images/ar}
+\end{center}
+
 
 \subsection{Geometric}
 Smoothing ähnlich zu Arithmetrisch, aber weniger Details gehen verloren.
@@ -106,6 +116,10 @@ Speziallfall ist dabei der Contraharmonie Mean Filter, welcher für positive $Q$
 \[
 \hat{f} = \frac{\sum_{s,t\in S_{xy}}g(s,t)^{Q+1}}{\sum_{s,t\in S_{xy}}g(s,t)^Q}
 \]
+\begin{center}
+	\includegraphics[width=0.8\columnwidth]{Images/harmonic}
+\end{center}
+
 
 \subsection{Order Statistic Filters}
 Diese Filter basierend auf den Werten der Pixel.
@@ -118,11 +132,19 @@ Diese Filter basierend auf den Werten der Pixel.
 \[
 \hat{f} = \underset{(s,t)\in S_{xy}}{\max/\min} g(s,t)
 \]
+\begin{center}
+	\includegraphics[width=0.8\columnwidth]{Images/max}
+\end{center}
+
 
 \textbf{Midpoint} funktioniert am besten bei zufällig verteiltem Rauschen, wie Gaußschem oder gleichmäßigem Rauschen.
 \[
 \hat{f} = \frac{1}{2}\left[\max g(s,t) + \min g(s,t)\right]
 \]
+\begin{center}
+	\includegraphics[width=0.8\columnwidth]{Images/max1}
+\end{center}
+
 
 \textbf{Alpha Trimmed}
 Bestimmt den Mittelwert nur der mittleren $mn-d$ Werten. (Oft 80\%). Dieser Filter ist robust gegen Outliers und \textit{normales} Rauschen. Bei $d=0$ ist ein Aritherisches Filter. Bei $d = mn-1$ ist ein Median Filter.
